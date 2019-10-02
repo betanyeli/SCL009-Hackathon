@@ -1,25 +1,37 @@
 import React from 'react';
-import {BrowserRouter, Route, Switch, NavLink} from 'react-router-dom';
-import Login from './components/LoginView'
-import Dashboard from './components/DashboardView'
 
-function Login() {
-    return (
-      <BrowserRouter>
-          <div className='navbar'>
-        <NavLink exact to="/HomeView" > Dashboard </NavLink>
-        <NavLink exact to="/OtherView"> Otro </NavLink>
-      </div>
-      <Switch>
-        <Route exact path="/" component={Login} ></Route>
-        <Route exact path="/login" component={Login} ></Route>
-        <Route exact path="/dashboard" component={Dashboard} ></Route>
-        {/* <Route exact path="/options" component={Options} ></Route> */}
-      </Switch>
-    </BrowserRouter>
-   
-   
-    )
+
+import { Form, Button, Container } from 'react-bootstrap';
+
+
+
+const Login = () => {
+           
+	return(
+    <Container class="login-form">
+  		<Form>
+    		<Form.Group controlId="formBasicEmail">
+    			<Form.Label>Email address</Form.Label>
+    			<Form.Control type="email" placeholder="Enter email" />
+    			<Form.Text className="text-muted">We'll never share your email with anyone else.</Form.Text>
+  			</Form.Group>
+
+  			<Form.Group controlId="formBasicPassword">
+    			<Form.Label>Password</Form.Label>
+    			<Form.Control type="password" placeholder="Password" />
+  			</Form.Group>
+			
+  			<Button variant="primary" type="submit" href="#"> Submit </Button>
+
+			</Form>
+		</Container>
+
+
+              
+	)
 }
+          
 
+      
+    
 export default Login
